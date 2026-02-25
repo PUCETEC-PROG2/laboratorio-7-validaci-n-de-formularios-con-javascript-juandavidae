@@ -49,15 +49,43 @@ function validateForm() {
     // Requisitos: No vacío, mínimo 2 caracteres
     // Pista: Usa getElementById('apellidoPaterno')
     
-    // Tu código aquí...
+    const apellidoPaterno = document.getElementById('apellidoPaterno');
+    const valorApellidoPaterno = apellidoPaterno.value.trim();
     
+    if (valorApellidoPaterno === '') {
+        // Campo vacío - marcar como inválido
+        apellidoPaterno.classList.add('no-valid');
+        isValid = false;
+    } else if (valorApellidoPaterno.length < 2) {
+        // Muy corto - marcar como inválido
+        apellidoPaterno.classList.add('no-valid');
+        isValid = false;
+    } else {
+        // Campo válido - remover marca de error si existe
+        apellidoPaterno.classList.remove('no-valid');
+    }
     
+       
     // ==========================================
     // TODO: Validar Apellido Materno
     // ==========================================
     // Requisitos: No vacío, mínimo 2 caracteres
     
-    // Tu código aquí...
+    const apellidoMaterno = document.getElementById('apellidoMaterno');
+    const valorApellidoMaterno = apellidoMaterno.value.trim();
+    
+    if (valorApellidoMaterno === '') {
+        // Campo vacío - marcar como inválido
+        apellidoMaterno.classList.add('no-valid');
+        isValid = false;
+    } else if (valorApellidoMaterno.length < 2) {
+        // Muy corto - marcar como inválido
+        apellidoMaterno.classList.add('no-valid');
+        isValid = false;
+    } else {
+        // Campo válido - remover marca de error si existe
+        apellidoMaterno.classList.remove('no-valid');
+    }
     
     
     // ==========================================
@@ -66,7 +94,19 @@ function validateForm() {
     // Requisitos: Exactamente 10 dígitos numéricos
     // Pista: Usa /^\d{10}$/.test(valor) para validar
     
-    // Tu código aquí...
+    const cedula = document.getElementById('apellidoMaterno');
+    const valorCedula = cedula.value.trim();
+    const regex = /^\d{10}$/;
+
+    if(valorCedula == ''){
+        isValid = false;
+        cedula.classList.add('no-valid');
+    } else if(!regex.test(valorCedula)) {
+        isValid = false;
+        cedula.classList.add('no-valid');
+    } else {
+        cedula.classList.remove('no-valid');
+    }
     
     
     // ==========================================
@@ -75,7 +115,19 @@ function validateForm() {
     // Requisitos: No vacío, mínimo 10 caracteres
     
     // Tu código aquí...
-    
+    const motivo = document.getElementById('apellidoMaterno');
+    const valorMotivo = motivo.value.trim();
+    const regexM = /^\d{10}$/;
+
+    if(valorMotivo == ''){
+        isValid = false;
+        motivo.classList.add('no-valid');
+    } else if(!regexM.test(valorMotivo)) {
+        isValid = false;
+        motivo.classList.add('no-valid');
+    } else {
+        motivo.classList.remove('no-valid');
+    }
     
     // ==========================================
     // TODO: Validar Tipo de Cuenta
